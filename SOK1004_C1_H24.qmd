@@ -1,19 +1,19 @@
 ---
-title: "SOK-1004 H24 - Case 1"
-author: "Derek J. Clark"
+title: "SOK-1301 H25 - Case 1"
+author: "Mikko Moilanen"
 format: html
 editor: visual
 ---
 
-Denne oppgaven er laget av Even S. Hvinden og oppdatert av Derek J. Clark. Sistnevnte er ansvarlig for eventuelle feil og mangler.
+Denne oppgaven er laget av Even S. Hvinden og oppdatert av Derek J. Clark og Mikko Moilanen. Sistnevnte er ansvarlig for eventuelle feil og mangler.
 
 ## Instruksjoner
 
-Denne oppgaven skal løses interaktivt i RStudio ved å legge inn egen kode og kommentarer. Det ferdige dokumentet lagres med kandidatnummeret som navn `[kandidatnummer]_SOK1004_C1_H24.qmd` og lastes opp på deres GitHub-side. Hvis du har kandidatnummer 43, så vil filen hete `43_SOK1004_C1_H24.qmd`. Påse at koden kjører og at dere kan eksportere besvarelsen til pdf. Dere leverer lenken til GitHub-repositoriumet i Canvas (under oppgaver).
+Denne oppgaven skal løses interaktivt i RStudio ved å legge inn egen kode og kommentarer. Det ferdige dokumentet lagres med kandidatnummeret som navn `[kandidatnummer]_SOK1301_C1_H25.qmd` og lastes opp på deres GitHub-side. Hvis du har kandidatnummer 43, så vil filen hete `43_SOK1301_C1_H25.qmd`. Påse at koden kjører og at dere kan eksportere besvarelsen til pdf. Dere leverer lenken til GitHub-repositoriumet i Canvas (under Oppgaver).
 
 ## Bakgrunn
 
-Vi skal analysere utviklingen i bruttonasjonalprodukt (BNP) per person i Norge. Vi bruker data Statistisk Sentralbyrå (SSB), tabell "09842: BNP og andre hovedstørrelser (kr per innbygger), etter statistikkvariabel og år". Tabellen inneholder årlige data på BNP per innbygger, fra 1970 til 2023.
+Vi skal analysere utviklingen i bruttonasjonalprodukt (BNP) per person i Norge. Vi bruker data Statistisk Sentralbyrå (SSB), tabell "09842: BNP og andre hovedstørrelser (kr per innbygger), etter statistikkvariabel og år". Tabellen inneholder årlige data på BNP per innbygger, fra 1970 til 2024.
 
 ## I. API, visualisering
 
@@ -74,7 +74,7 @@ Vi har nå informasjonen vi trenger til å laste ned BNP-tall mellom 1970 og 202
 
 ```{r}
 df <- lenke %>% 
-  ApiData(Tid = paste(1970:2023), ContentsCode = c("BNP","MEMOBNP"))
+  ApiData(Tid = paste(1970:2024), ContentsCode = c("BNP","MEMOBNP"))
 ```
 
 På venstre side av likhetstegnet bruker vi `code` fra metadata. På høyre side velger vi verdier fra `values`. Merk at jeg bruker funksjonen `paste()` for å konvertere numeriske verdier, for eksempel `<dbl>` til tegn `<chr>`.
@@ -106,7 +106,7 @@ df %>%
   geom_line()
 ```
 
-Lag en pen figur som viser BNP i tusener av kroner per person, i både løpende og faste priser, mellom 2000 og 2023. Skriv en tydelig forklaring og tolkning av figuren. Hvordan har inntektene utviklet seg? Forklar forskjellen mellom BNP i løpende og faste priser. Til hvilke formål er de mest relevante?
+Lag en pen figur som viser BNP i tusener av kroner per person, i både løpende og faste priser, mellom 2000 og 2024. Skriv en tydelig forklaring og tolkning av figuren. Hvordan har inntektene utviklet seg? Forklar forskjellen mellom BNP i løpende og faste priser. Til hvilke formål er de mest relevante?
 
 ```{r}
 # Oppgave Ib løses her 
